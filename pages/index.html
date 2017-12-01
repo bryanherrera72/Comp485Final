@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BetterList</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel = "stylesheet" href="../styles/style.css">
+  </head>
+  <body>
+	
+  	
+	  	<div class = "jumbotron">
+	  		<div class = "container">
+		  		<div class = "row">
+		  			<div class = "col-lg-4"></div>
+			  		<div class = "display-1 col-lg-5">BetterList</div>
+			  		<p class="lead col-lg-3"><strong>Better</strong> than Craigs<strong>list</strong>.</p>
+		  		</div>
+		  		<hr class="my-4">
+		  		<div class = "row">
+		  			
+		  		</div>
+	  		</div>
+	  	</div>
+  	
+     <row class = "row">
+    	 <div id="map"></div>
+   	 </row>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- Just initializing the map... -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVaaQwPDQF9Ay5QQjVAfIIgCCYguH3m6c&callback=initMap">
+    </script>
+    <script>
+    
+      function initMap() {
+        var uluru = {lat: 34.241655, lng:-118.528425 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+
+        marker.addListener('click', function(){
+        	window.location.href = './categories.html';
+        });
+      }
+    </script>
+  </body>
+</html>
